@@ -1,0 +1,13 @@
+# PDV Services
+GET  /pdv/:pdvId                org.github.chandonbrut.BeerService.getPDV(pdvId:Int)
+GET  /pdvs                      org.github.chandonbrut.BeerService.getAllPDVs
+
+PUT  /pdv                       org.github.chandonbrut.BeerService.insertPDV
+PUT  /pdvs                      org.github.chandonbrut.BeerService.bulkInsertPDV
+POST /pdv/find                  org.github.chandonbrut.BeerService.findPDVs
+
+#Static pages
+GET  /view                      org.github.chandonbrut.BeerService.show
+
+# Assets
+GET     /assets/*file           controllers.Assets.versioned(path="/public", file: Asset)

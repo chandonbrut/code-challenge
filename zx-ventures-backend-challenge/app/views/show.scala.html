@@ -1,0 +1,19 @@
+@main("PDVs") {
+<link href='@routes.Assets.versioned("leaflet/leaflet.css")' rel="stylesheet">
+<script src='@routes.Assets.versioned("leaflet/leaflet.js")'></script>
+
+<script src='@routes.Assets.versioned("javascripts/terraformer.min.js")'></script>
+<script src='@routes.Assets.versioned("javascripts/terraformer-wkt-parser.min.js")'></script>
+
+<button onclick="javascript:fetchAllPDVs();"> :oD </button>
+<button onclick="javascript:limpa();"> :ó(</button>
+
+<div id="map" style="height: 100%; width: 100%;"></div>
+
+<script src='@routes.Assets.versioned("javascripts/map.js")'></script>
+
+
+
+<script>loadMap();</script>
+
+}
