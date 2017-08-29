@@ -1,7 +1,10 @@
 ZX Ventures Backend Challenge
 =============================
+
 scala + play + akka + jts + mongodb (sorta)
 
+There is an instance of this running at [heroku](https://zx-ventures-backend-challenge.herokuapp.com/view).
+I didn't implement a single test (neither constraints).
 
 
 Building and Running
@@ -60,3 +63,26 @@ The Actors
 I build two example actors: InMemoryPDVActor and MongoPDVActor.
 The InMemoryPDVActor stores the POS in memory and uses JTS for topology functions (distance, within queries, etc).
 The MongoPDVActor stores the data in a mongodb instance and uses the Geospatial MongoDB queries.
+
+Heroku Stuff
+------------
+If you go to and there is no data, don't worry.
+Just use httpie to load the data.
+
+		$ http https://zx-ventures-backend-challenge.herokuapp.com/assets/pdvs.json | http PUT https://zx-ventures-backend-challenge.herokuapp.com/pdvs
+				HTTP/1.1 200 OK
+				Connection: keep-alive
+				Content-Length: 15
+				Content-Type: application/json
+				Date: Tue, 29 Aug 2017 17:58:27 GMT
+				Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+				Server: Cowboy
+				Via: 1.1 vegur
+				X-Content-Type-Options: nosniff
+				X-Frame-Options: DENY
+				X-Permitted-Cross-Domain-Policies: master-only
+				X-Xss-Protection: 1; mode=block
+
+				{
+				    "status": "ok"
+				}
